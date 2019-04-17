@@ -16,14 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self.view addSubview:({
-        UILabel *label = [[UILabel alloc] init];
-        label.text = @"hello wolrd";
-        [label sizeToFit];
-        label.center = CGPointMake(self.view.frame.size.width/2,self.view.frame.size.height/2);
-        label;
-    })];
+    
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor redColor];
+    view.frame = CGRectMake(100, 100, 100, 100);
+    [self.view addSubview:view];
+    
 }
 
 
