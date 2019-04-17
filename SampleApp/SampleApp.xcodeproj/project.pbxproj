@@ -13,6 +13,7 @@
 		6314F0DC22673B2700D9DC06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6314F0DB22673B2700D9DC06 /* Assets.xcassets */; };
 		6314F0DF22673B2700D9DC06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6314F0DD22673B2700D9DC06 /* LaunchScreen.storyboard */; };
 		6314F0E222673B2700D9DC06 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6314F0E122673B2700D9DC06 /* main.m */; };
+		6314F0E92267504C00D9DC06 /* icon.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6314F0E82267504C00D9DC06 /* icon.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6314F0DE22673B2700D9DC06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6314F0E022673B2700D9DC06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6314F0E122673B2700D9DC06 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6314F0E82267504C00D9DC06 /* icon.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = icon.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				6314F0D222673B2600D9DC06 /* AppDelegate.h */,
 				6314F0D322673B2600D9DC06 /* AppDelegate.m */,
+				6314F0E82267504C00D9DC06 /* icon.bundle */,
 				6314F0D522673B2600D9DC06 /* ViewController.h */,
 				6314F0D622673B2600D9DC06 /* ViewController.m */,
 				6314F0D822673B2600D9DC06 /* Main.storyboard */,
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6314F0E92267504C00D9DC06 /* icon.bundle in Resources */,
 				6314F0DF22673B2700D9DC06 /* LaunchScreen.storyboard in Resources */,
 				6314F0DC22673B2700D9DC06 /* Assets.xcassets in Resources */,
 				6314F0DA22673B2600D9DC06 /* Main.storyboard in Resources */,

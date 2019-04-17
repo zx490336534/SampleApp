@@ -2,6 +2,10 @@
 
 [源码](https://github.com/geektime-geekbang/geektime-ios-course)：<https://github.com/geektime-geekbang/geektime-ios-course>
 
+[我的Github](https://github.com/zx490336534/SampleApp)：https://github.com/zx490336534/SampleApp
+
+![广告](https://ws4.sinaimg.cn/large/006tNc79ly1g25wj1q3r3j30u01hdkjl.jpg)
+
 ## 创建第一个Xcode工程
 
 ![创建1](https://ws2.sinaimg.cn/large/006tNc79ly1g25thtb4kuj318k0q4dq0.jpg)
@@ -142,3 +146,94 @@
 - viewDidDisappear
 - Dealloc
 
+## 实现TabBar页面
+
+`AppDelegate.m`文件：
+
+```objective-c
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    UIViewController *controller1 =[[UIViewController alloc]init];
+    controller1.view.backgroundColor = [UIColor redColor];
+    UIViewController *controller2 =[[UIViewController alloc]init];
+    controller2.view.backgroundColor = [UIColor yellowColor];
+    UIViewController *controller3 =[[UIViewController alloc]init];
+    controller3.view.backgroundColor = [UIColor greenColor];
+    UIViewController *controller4 =[[UIViewController alloc]init];
+    controller4.view.backgroundColor = [UIColor lightGrayColor];
+    [tabbarController setViewControllers:@[controller1,controller2,controller3,controller4]];
+    self.window.rootViewController = tabbarController;
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+```
+
+点击不同位置颜色不同
+
+![TabBar](https://ws3.sinaimg.cn/large/006tNc79ly1g25vk04dl3j30ni1akjsp.jpg)
+
+#### 增加标题
+
+```objective-c
+UIViewController *controller1 =[[UIViewController alloc]init];
+controller1.view.backgroundColor = [UIColor redColor];
+controller1.tabBarItem.title=@"新闻";
+    
+UIViewController *controller2 =[[UIViewController alloc]init];
+controller2.view.backgroundColor = [UIColor yellowColor];
+controller2.tabBarItem.title=@"视频";
+    
+UIViewController *controller3 =[[UIViewController alloc]init];
+controller3.view.backgroundColor = [UIColor greenColor];
+controller3.tabBarItem.title=@"推荐";
+    
+UIViewController *controller4 =[[UIViewController alloc]init];
+controller4.view.backgroundColor = [UIColor lightGrayColor];
+controller4.tabBarItem.title=@"我的";
+```
+
+![增加标题](https://ws3.sinaimg.cn/large/006tNc79ly1g25vmhymirj30ni1akjst.jpg)
+
+#### 增加图片
+
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UITabBarController *tabbarController = [[UITabBarController alloc] init];
+    
+    UIViewController *controller1 =[[UIViewController alloc]init];
+    controller1.view.backgroundColor = [UIColor redColor];
+    controller1.tabBarItem.title=@"新闻";
+    controller1.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+    controller1.tabBarItem.selectedImage = [UIImage imageNamed:@"ico.bundle/page_selected@2x.png"];
+    
+    UIViewController *controller2 =[[UIViewController alloc]init];
+    controller2.view.backgroundColor = [UIColor yellowColor];
+    controller2.tabBarItem.title=@"视频";
+    controller2.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/video@2x.png"];
+    controller2.tabBarItem.selectedImage = [UIImage imageNamed:@"ico.bundle/video_selected@2x.png"];
+    
+    UIViewController *controller3 =[[UIViewController alloc]init];
+    controller3.view.backgroundColor = [UIColor greenColor];
+    controller3.tabBarItem.title=@"推荐";
+    controller3.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/like@2x.png"];
+    controller3.tabBarItem.selectedImage = [UIImage imageNamed:@"ico.bundle/like_selected@2x.png"];
+    
+    UIViewController *controller4 =[[UIViewController alloc]init];
+    controller4.view.backgroundColor = [UIColor lightGrayColor];
+    controller4.tabBarItem.title=@"我的";
+    controller4.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/home@2x.png"];
+    controller4.tabBarItem.selectedImage = [UIImage imageNamed:@"ico.bundle/home_selected@2x.png"];
+    
+    [tabbarController setViewControllers:@[controller1,controller2,controller3,controller4]];
+    self.window.rootViewController = tabbarController;
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+```
+
+![Tab图片](https://ws4.sinaimg.cn/large/006tNc79ly1g25w81hbj3j30ni1ak75w.jpg)
