@@ -95,3 +95,50 @@
 `view2`在`view`之后创建，所以view2在view`上方`
 
 ![绿色方块](https://ws1.sinaimg.cn/large/006tNc79ly1g25ucgonfdj30ni1akwfp.jpg)
+
+### UIview的生命周期
+
+#### 创建一个自己的TestView，继承于UIView
+
+```objective-c
+@interface TestView : UIView // 创建一个自己的TestView，继承于UIView
+@end
+
+@implementation TestView
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+- (void)willMoveToSuperview:(nullable UIView *)newSuperview{
+    [super willMoveToSuperview:newSuperview];
+}
+- (void)didMoveToSuperview{
+    [super didMoveToSuperview];
+}
+- (void)willMoveToWindow:(nullable UIWindow *)newWindow{
+    [super willMoveToWindow:newWindow];
+}
+- (void)didMoveToWindow{
+    [super didMoveToWindow];
+}
+@end
+```
+
+#### 断点调试
+
+![断点调试](https://ws3.sinaimg.cn/large/006tNc79ly1g25unu9oyaj30v40u0do7.jpg)
+
+实例化的时候使用`TestView`：TestView *view2 = [[TestView alloc] init];
+
+### ViewController的生命周期
+
+- init
+- viewDidLoad
+- viewWillAppear
+- viewDidAppear
+- viewWillDisappear
+- viewDidDisappear
+- Dealloc
+
