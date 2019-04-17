@@ -12,6 +12,7 @@
 @implementation ViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIView *view = [[UIView alloc] init];
     view.backgroundColor = [UIColor redColor];
