@@ -67,3 +67,31 @@
 ```
 
 ![红色方框](https://ws4.sinaimg.cn/large/006tNc79ly1g25ua6n4dij30ni1akdh2.jpg)
+
+### 创建一个有重叠的绿色方块
+
+```objective-c
+#import "ViewController.h"
+@interface ViewController ()
+@end
+@implementation ViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor redColor];
+    view.frame = CGRectMake(100, 100, 100, 100);
+    [self.view addSubview:view];
+    
+    UIView *view2 = [[UIView alloc] init];
+    view2.backgroundColor = [UIColor greenColor];
+    view2.frame = CGRectMake(150, 150, 100, 100);
+    [self.view addSubview:view2];
+    
+}
+@end
+```
+
+`view2`在`view`之后创建，所以view2在view`上方`
+
+![绿色方块](https://ws1.sinaimg.cn/large/006tNc79ly1g25ucgonfdj30ni1akwfp.jpg)
