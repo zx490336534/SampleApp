@@ -237,3 +237,72 @@ controller4.tabBarItem.title=@"我的";
 ```
 
 ![Tab图片](https://ws4.sinaimg.cn/large/006tNc79ly1g25w81hbj3j30ni1ak75w.jpg)
+
+### 使用UINavigationController管理页面
+
+1. 通过栈管理`页面间`的跳转
+2. 通常只展示栈顶页面
+3. Push/Pop操作
+
+先导入h文件：#import "ViewController.h"
+
+```objective-c
+#import "ViewController.h"
+ViewController *viewController = [[ViewController alloc]init];
+    
+UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    UIViewController *controller1 =[[UIViewController alloc]init];
+//    controller1.view.backgroundColor = [UIColor redColor];
+navigationController.tabBarItem.title=@"新闻";
+navigationController.tabBarItem.image = [UIImage imageNamed:@"icon.bundle/page@2x.png"];
+navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"ico.bundle/page_selected@2x.png"];
+
+[tabbarController setViewControllers:@[navigationController,controller2,controller3,controller4]];
+```
+
+![新闻页面修改](https://ws3.sinaimg.cn/large/006tNc79ly1g25xaccy34j30ni1akwg1.jpg)
+
+### 操作新闻页面
+
+`viewController.m`中添加一个手势
+
+```objective-c
+UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(pushController)];
+    [view2 addGestureRecognizer:tapGesture];
+```
+
+创建该手势对应的方法`pushController`：
+
+```objective-c
+- (void)pushController{
+    [self.navigationController pushViewController:[[UIViewController alloc]init] animated:YES];
+}
+```
+
+可以看到`Back`
+
+![点击绿色的方框后的页面](https://ws3.sinaimg.cn/large/006tNc79ly1g25xk6z2k1j30ni1akabo.jpg)
+
+#### 将跳转页面改为白色，增加标题
+
+修改函数
+
+```objective-c
+- (void)pushController{
+    UIViewController *viewcontroller = [[UIViewController alloc]init];
+    viewcontroller.view.backgroundColor = [UIColor whiteColor];
+    viewcontroller.navigationItem.title = @"内容";
+    
+    [self.navigationController pushViewController:viewcontroller animated:YES];
+}
+```
+
+![新跳转的页面](https://ws1.sinaimg.cn/large/006tNc79ly1g25xp3x4ljj30ni1aktag.jpg)
+
+### 增加右侧标题
+
+```objective-c
+viewcontroller.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
+```
+
+![增加右侧标题](https://ws4.sinaimg.cn/large/006tNc79ly1g25xrgd24rj30mc1a0tat.jpg)
