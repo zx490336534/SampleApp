@@ -6,6 +6,8 @@
 
 ![广告](https://ws4.sinaimg.cn/large/006tNc79ly1g25wj1q3r3j30u01hdkjl.jpg)
 
+# 第一天
+
 ## 创建第一个Xcode工程
 
 ![创建1](https://ws2.sinaimg.cn/large/006tNc79ly1g25thtb4kuj318k0q4dq0.jpg)
@@ -238,6 +240,8 @@ controller4.tabBarItem.title=@"我的";
 
 ![Tab图片](https://ws4.sinaimg.cn/large/006tNc79ly1g25w81hbj3j30ni1ak75w.jpg)
 
+# 第二天
+
 ### 使用UINavigationController管理页面
 
 1. 通过栈管理`页面间`的跳转
@@ -262,7 +266,7 @@ navigationController.tabBarItem.selectedImage = [UIImage imageNamed:@"ico.bundle
 
 ![新闻页面修改](https://ws3.sinaimg.cn/large/006tNc79ly1g25xaccy34j30ni1akwg1.jpg)
 
-### 操作新闻页面
+#### 操作新闻页面
 
 `viewController.m`中添加一个手势
 
@@ -299,10 +303,17 @@ UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarg
 
 ![新跳转的页面](https://ws1.sinaimg.cn/large/006tNc79ly1g25xp3x4ljj30ni1aktag.jpg)
 
-### 增加右侧标题
+#### 增加右侧标题
 
 ```objective-c
 viewcontroller.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"右侧标题" style:UIBarButtonItemStylePlain target:self action:nil];
 ```
 
 ![增加右侧标题](https://ws4.sinaimg.cn/large/006tNc79ly1g25xrgd24rj30mc1a0tat.jpg)
+
+# 第三天
+
+切换页面的时候隐藏掉下面的导航栏
+
+![隐藏的效果](http://ww3.sinaimg.cn/large/006tNc79ly1g4ex1yk8bfj30tq1gs47d.jpg)
+
